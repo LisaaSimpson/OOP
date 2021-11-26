@@ -37,6 +37,10 @@ public:
 		printf("Вызвался деструктор класса Rectangle\n");
 		printf("Стороны прямоугольника = %d %d\n\n", a, b);
 	}
+
+	virtual void PrintName() {
+		printf("\nRectangle\n");
+	}
 };
 
 void Rectangle::ResetRectangle() {
@@ -73,6 +77,10 @@ public:
 	~Parallelepiped() {
 		printf("Вызвался деструктор класса Parallelepiped\n");
 		printf("Стороны параллелепипеда = %d %d %d\n\n", a, b, c);
+	}
+
+	void PrintName() {
+		printf("\nParallelepiped\n");
 	}
 };
 
@@ -153,6 +161,7 @@ int main()
 	//вызов объекта класса наследника с переменной-указателем типа предка
 	printf("Вызов объекта класса наследника с переменной-указателем типа предка\n\n");
 	Rectangle* figure = new Parallelepiped(6, 4, 5);
+	figure->PrintName();
 
 	delete figure;
 
